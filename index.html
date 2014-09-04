@@ -9,12 +9,31 @@
             var c = document.getElementById("duken");
             var ctx = c.getContext("2d");
             
-            ctx.strokeStyle ="rgb(0, 100, 255)"
-            ctx.fillStyle = "rgb(255, 100, 0)";
-            ctx.beginPath();
-            ctx.arc(95,50,40,0, 2*Math.PI);
-            ctx.fill();
-            ctx.stroke();
+            
+            //En röd cirkel
+            function redCircle(x, y, r){
+                ctx.strokeStyle ="rgb(0, 100, 255)"
+                ctx.fillStyle = "rgb(255, 100, 0)";
+                ctx.beginPath();
+                ctx.arc(x,y,r,0, 2*Math.PI);
+                ctx.fill();
+                ctx.stroke();
+            }
+            
+            function oldMan(x,y){
+            redCircle(x, y, 40);
+            ctx.fillRect(x -10,y +35, 20, 100);
+            ctx.fillRect(x -50,y +50, 100, 20);
+            ctx.fillRect(x-30,y+115, 20, 100);
+            ctx.fillRect(x+10,y+115, 20, 100);
+            ctx.fillRect(x-50,y+195, 40, 20);
+            ctx.fillRect(x+10,y+195, 40, 20);
+            }
+            
+            oldMan(400, 200);
+            
+            oldMan(750, 300);
+            
         </script>
     </body>
 </html>
